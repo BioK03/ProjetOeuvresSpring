@@ -30,59 +30,59 @@ public class Adherent implements Serializable {
 
 	//bi-directional many-to-one association to Reservation
 	@OneToMany(mappedBy="adherent")
-	private List<Reservation> reservations;
+	private List<Booking> reservations;
 
 	public Adherent() {
 	}
 
-	public int getIdAdherent() {
+	public int getId() {
 		return this.idAdherent;
 	}
 
-	public void setIdAdherent(int idAdherent) {
+	public void setId(int idAdherent) {
 		this.idAdherent = idAdherent;
 	}
 
-	public String getNomAdherent() {
+	public String getLastname() {
 		return this.nomAdherent;
 	}
 
-	public void setNomAdherent(String nomAdherent) {
+	public void setLastname(String nomAdherent) {
 		this.nomAdherent = nomAdherent;
 	}
 
-	public String getPrenomAdherent() {
+	public String getFirstname() {
 		return this.prenomAdherent;
 	}
 
-	public void setPrenomAdherent(String prenomAdherent) {
+	public void setFirstname(String prenomAdherent) {
 		this.prenomAdherent = prenomAdherent;
 	}
 
-	public String getVilleAdherent() {
+	public String getCity() {
 		return this.villeAdherent;
 	}
 
-	public void setVilleAdherent(String villeAdherent) {
+	public void setCity(String villeAdherent) {
 		this.villeAdherent = villeAdherent;
 	}
 
-	public List<Reservation> getReservations() {
+	public List<Booking> getReservations() {
 		return this.reservations;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
+	public void setReservations(List<Booking> reservations) {
 		this.reservations = reservations;
 	}
 
-	public Reservation addReservation(Reservation reservation) {
+	public Booking addReservation(Booking reservation) {
 		getReservations().add(reservation);
 		reservation.setAdherent(this);
 
 		return reservation;
 	}
 
-	public Reservation removeReservation(Reservation reservation) {
+	public Booking removeReservation(Booking reservation) {
 		getReservations().remove(reservation);
 		reservation.setAdherent(null);
 
